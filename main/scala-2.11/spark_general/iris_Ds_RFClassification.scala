@@ -21,7 +21,7 @@ object iris_Ds_RFClassification extends App{
   val sqlContext = new SQLContext(sc)
 
   //Load and parse the data file, converting it to a Dataframe
-  val lines =sc.textFile("/Users/taiwoadetiloye/IdeaProjects/simpleGraph/src/main/resources/iris.data.txt")
+  val lines =sc.textFile("******/iris.data.txt")
  lines.persist()
 
   val nonEmpty = lines.filter(_.nonEmpty)
@@ -51,7 +51,7 @@ object iris_Ds_RFClassification extends App{
     .fit(data)
 
   val features = Array("data1", "data2", "data3","data4")
-  val featureIndexer = new VectorAssembler()
+  val featureIndexer = new FeatureEncoder() // not necessary correct(Fix it! or reach me)
         .setInputCols(features)
     .setOutputCol("indexedFeatures")
 
