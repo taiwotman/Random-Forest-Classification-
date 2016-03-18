@@ -51,7 +51,7 @@ object iris_Ds_RFClassification extends App{
     .fit(data)
 
   val features = Array("data1", "data2", "data3","data4")
-  val featureIndexer = new FeatureEncoder() // not necessary correct(Fix it! or reach me)
+  val featureIndexer = new FeatureEncoder() // not necessarily correct(Fix it! or reach me)
         .setInputCols(features)
     .setOutputCol("indexedFeatures")
 
